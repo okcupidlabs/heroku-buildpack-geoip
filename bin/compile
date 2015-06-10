@@ -1,0 +1,11 @@
+#!/bin/bash
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Fetching GeoIP City"
+
+cd $1
+
+curl -L --silent https://s3.amazonaws.com/xregadtag/GeoIPCity.dat > vendor/GeoIPCity.dat
